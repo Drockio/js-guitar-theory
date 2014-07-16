@@ -1,0 +1,94 @@
+﻿/*CSS reset*/
+html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {
+    margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block; }
+nav ul { list-style:none;}
+blockquote, q { quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; text-decoration: none;}
+table { border-collapse:collapse; border-spacing:0; }
+hr { display:block; height:1px; border:0; border-top:1px solid #cccccc;  margin:1em 0; padding:0; }
+input, select { vertical-align:middle;}
+
+
+body {
+    font-size: 1.0em;
+    font-family: Helvetica, Sans-Serif;
+    color: #fbfbfb;
+    letter-spacing: 0.07em;
+    line-height: 1;
+    /*background-color: #1b2638;*/
+    background-color: #1a2637;
+    background-image: url(Notes-background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+header,  nav, section { display: block; }
+
+h1, h2, h3, h4, h5, h6 { font-family: Helvetica, sans-serif; margin-bottom: 15px; text-align: center; color: #1a2637;}
+h1 {font-size: 2.2em;}
+h2 {font-size: 2.0em;}
+h3 {font-size: 1.8em;}
+h4 {font-size: 1.6em;}
+h5 {font-size: 1.4em;}
+
+section {margin-left: auto; margin-right: auto; display: block; width: 400px;}
+select {width: 100px;}
+
+/*generic classes*/
+.clear {clear: both;}
+.border {border: 1px solid black;}
+.rounded {-webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;}
+
+/*forms*/
+label {margin-top: 11px; display: block;}
+input, select {display: block;}
+input[type='text'], select {width: 200px;}
+textarea {width: 90%; height: 65px; margin-top: 20px; margin-bottom: 20px; display: block; max-width: 400px;}
+
+/*controls*/
+.controls {margin-top: 10px; margin-bottom: 30px;}
+
+
+
+/*fretboard*/
+.fretboard { width: 300px;  float: left; background-color:rgba(60,85,116,0.9); padding: 10px 10px 10px 100px; }
+.fretboard .highest-string {border-top: 1px solid transparent; border-right: 1px solid transparent; border-bottom: 1px solid transparent;}
+.fretboard .lowest-string {border-left: 2px solid #333;}
+.fretboard .nut {border: 1px solid transparent; height: 10px;}
+.fretboard .nut span {top: 0%;}
+.fretboard ol { float: left; height: 900px; }
+.fretboard ol li {position: relative; list-style-type: none; border: 1px solid #333; width: 40px;}
+.fretboard ol li span {position: absolute; left: -10px;  width: 20px;  color: #ccc;
+                       /*center the letters vertically and horizontally*/
+                       text-align: center; top: 50%; height: 1em; margin-top: -.5em;}
+
+.fretboard ol li:nth-child(2) {height: 7.63%;}
+.fretboard ol li:nth-child(3) {height: 7.21%;}
+.fretboard ol li:nth-child(4) {height: 6.83%;}
+.fretboard ol li:nth-child(5) {height: 6.41%;}
+.fretboard ol li:nth-child(6) {height: 6.09%;}
+.fretboard ol li:nth-child(7) {height: 5.71%;}
+.fretboard ol li:nth-child(8) {height: 5.39%;}
+.fretboard ol li:nth-child(9) {height: 5.13%;}
+.fretboard ol li:nth-child(10) {height: 4.81%;}
+.fretboard ol li:nth-child(11) {height: 4.54%;}
+.fretboard ol li:nth-child(12) {height: 4.27%;}
+.fretboard ol li:nth-child(13) {height: 4.06%;}
+.fretboard ol li:nth-child(14) {height: 3.84%;}
+.fretboard ol li:nth-child(15) {height: 3.58%;}
+.fretboard ol li:nth-child(16) {height: 3.42%;}
+.fretboard ol li:nth-child(17) {height: 3.20%;}
+.fretboard ol li:nth-child(18) {height: 3.04%;}
+.fretboard ol li:nth-child(19) {height: 2.83%;}
+.fretboard ol li:nth-child(20) {height: 2.72%;}
+.fretboard ol li:nth-child(21) {height: 2.56%;}
+.fretboard ol li:nth-child(22) {height: 2.40%;}
+.fretboard ol li:nth-child(23) {height: 2.24%;}
+.fretboard ol li:nth-child(24) {height: 2.08%;}
+
+
+
+.inScale {background-color: blue; color: white;}
+.root {background-color: red; color: white;}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Fretboard Logic</title>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <link href="site.css" rel="stylesheet"/>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="music.js"></script>
+    </head>
+    <body>
+        <section class="content-wrapper main-content clear-fix">
+            <section>
+    <h1>Derek's Note Finder</h1>
+    <div class="fretboard rounded" id="fb1">
+        <div class="controls">
+            <label for="tuning">Tuning</label><select id="tuning" name="tuning">
+                <option value="g,d,a,e">Bass - Standard - EADG</option>
+                <option value="e,b,g,d,a,e">Guitar - Standard - EADGBE</option>
+                <option value="e,b,g,d,a,d">Guitar - Drop D - EADGBE</option>
+            </select>
+            <label for="scale">Scale</label><select id="scale">
+                <option value="none">--SELECT--</option>
+                <option value="major-scale">Major Scale</option>
+                <option value="pentatonic-scale">Pentatonic Scale</option>
+                <option value="major-chord-notes">Major Chord Notes</option>
+            </select>
+            <label for="key">Key</label><select id="key">
+                <option value="a">a</option>
+                <option value="a-sharp">a#</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="c-sharp">c#</option>
+                <option value="d">d</option>
+                <option value="d-sharp">d#</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="f-sharp">f#</option>
+                <option value="g">g</option>
+                <option value="g-sharp">g#</option>
+            </select>
+        </div>
+    </div>
+</section>
+<script>
+    var fb1;
+
+    $(document).ready(function () {
+        //set initial fretboard
+        $('#tuning').val('e,b,g,d,a,e');
+        fretBoard1 = new Music($('select#tuning option:selected').val(), 'fb1');
+       
+        $('#tuning').change(function () {
+            fretBoard1.updateFretboard();
+        })
+
+        $('#scale').change(function () {
+            fretBoard1.updateFretboard();
+        })
+
+        $('#key').change(function () {
+            fretBoard1.updateFretboard();
+        })
+    })
+</script>
+</section>
+
+
+</body>
+</html>
