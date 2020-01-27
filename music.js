@@ -93,18 +93,18 @@ Music.prototype = {
 
     showMajorChordNotes : function(root) {
         //1 3 5
-        this.removeHighlighting();
-        root = root.replace('-sharp', '#');
-        this.addClassToNote(root, 'root');
-        this.addClassToNote(this.getNoteViaInterval(root, 4), 'inScale');
-        this.addClassToNote(this.getNoteViaInterval(root, 7), 'inScale');
+        this.removeHighlighting();                          //degree of scale
+        root = root.replace('-sharp', '#');                 //===============
+        this.addClassToNote(root, 'root');                                //1
+        this.addClassToNote(this.getNoteViaInterval(root, 4), 'inScale'); //2
+        this.addClassToNote(this.getNoteViaInterval(root, 7), 'inScale'); //3
     },
 
     showMajorScale : function(root) {
         //WWHWWWH
-        this.removeHighlighting();
-        root = root.replace('-sharp', '#');
-        this.addClassToNote(root, 'root');                        //1
+        this.removeHighlighting();                          //degree of scale
+        root = root.replace('-sharp', '#');                 //===============
+        this.addClassToNote(root, 'root');                                //1
         this.addClassToNote(this.getNoteViaInterval(root, 2), 'inScale'); //2
         this.addClassToNote(this.getNoteViaInterval(root, 4), 'inScale'); //3
         this.addClassToNote(this.getNoteViaInterval(root, 5), 'inScale'); //4
@@ -115,9 +115,9 @@ Music.prototype = {
 
     showPentatonicScale : function(root) {
         //drop 4th and 7th
-        this.removeHighlighting();
-        root = root.replace('-sharp', '#');
-        this.addClassToNote(root, 'root');                        //1
+        this.removeHighlighting();                          //degree of scale
+        root = root.replace('-sharp', '#');                 //===============
+        this.addClassToNote(root, 'root');                                //1
         this.addClassToNote(this.getNoteViaInterval(root, 2), 'inScale'); //2
         this.addClassToNote(this.getNoteViaInterval(root, 4), 'inScale'); //3
         this.addClassToNote(this.getNoteViaInterval(root, 7), 'inScale'); //5
