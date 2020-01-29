@@ -8,6 +8,7 @@
         <link href="_includes.css" rel="stylesheet"/>
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="music.js"></script>
+        <script src="light.js"></script>
     </head>
     <body>
         <section class="content-wrapper main-content clear-fix">
@@ -49,6 +50,7 @@
 </section>
 <script>
     $(document).ready(function () {
+
         //set initial fretboard
         $('#tuning').val('e,b,g,d,a,e');
         fretBoard1 = new Music($('select#tuning option:selected').val(), 'fb1');
@@ -64,6 +66,11 @@
         $('#key').change(function () {
             fretBoard1.updateFretboard();
         })
+
+        //fretBoard1.getTimbre('C', 16.35);
+        //fretBoard1.getTimbre('C#/Db', 17.32);
+
+        fretBoard1.getTimbres(16.35);
     })
 </script>
 </section>

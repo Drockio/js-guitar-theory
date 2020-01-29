@@ -56,6 +56,45 @@ Music.prototype = {
         return targetNote;
     },
 
+    getTimbres : function(initialFrequency){
+        let intervalBetweenQuarterNotes = .97;
+
+        let message = `Note: frequency between notes set to ${intervalBetweenQuarterNotes}.
+        \nhttps://pages.mtu.edu/~suits/notefreqs.html is where I got the intervals close. 
+        \nSomething seems a little off further up in frequencies, off by about 2-100hz at higher ranges.
+        \nSpreadsheet: https://docs.google.com/spreadsheets/d/1ZncHu7g4u71ULjpidS8RrhZZ3jK3FoPuR3gDfUjPCcI/edit#gid=0`;
+        console.log(message);
+
+        Music.prototype.getTimbre('    C', initialFrequency);
+        Music.prototype.getTimbre('C#/Db', initialFrequency + intervalBetweenQuarterNotes++);
+        Music.prototype.getTimbre('    D', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('D#/Eb', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('    E', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('    F', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('F#/Gb', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('    G', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('G#/Ab', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('    A', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('A#/Bb', initialFrequency + intervalBetweenQuarterNotes++ );
+        Music.prototype.getTimbre('    B', initialFrequency + intervalBetweenQuarterNotes++ );
+        //B Sharp yo!
+    },
+
+    getTimbre : function(note, initialFrequency){
+        let secondFrequency = initialFrequency * 2;
+        let thirdFrequency = secondFrequency * 2;
+        let fourthFrequency = thirdFrequency * 2;
+        let fifthFrequency = fourthFrequency * 2;
+        let sixthFrequency = fifthFrequency * 2;
+        let seventhFrequency = sixthFrequency * 2;
+        let eighthFrequency = seventhFrequency * 2;
+        let ninthFrequency = eighthFrequency * 2;
+        let verboseOutput = `Note:${note} :: ${note}0: ${initialFrequency} | ${note}1: ${secondFrequency} | ${note}2: ${thirdFrequency} | ${note}3: ${fourthFrequency} | ${note}4: ${fifthFrequency} | ${note}5: ${sixthFrequency} | ${note}6: ${seventhFrequency} | ${note}7: ${eighthFrequency} | ${note}8: ${ninthFrequency}`;
+        let tabularOutput = `${note}\n${note}0: ${initialFrequency}\n${note}1: ${secondFrequency}\n${note}2: ${thirdFrequency}\n${note}3: ${fourthFrequency}\n${note}4: ${fifthFrequency}\n${note}5: ${sixthFrequency}\n${note}6: ${seventhFrequency}\n${note}7: ${eighthFrequency}\n${note}8: ${ninthFrequency}`;
+
+        console.log(tabularOutput);
+    },
+
     populateString : function(stringName, note, extraClassString) {
         $(stringName).append('<li class="nut ' + extraClassString + '"><span class="' + note.replace('#', '-sharp')  + '">' + note + '</span></li>');
         for (var i = 1; i < this.numFrets; i++) {
